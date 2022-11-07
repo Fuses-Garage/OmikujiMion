@@ -1,12 +1,10 @@
-async function cc(interaction){
-	if (!interaction.isChatInputCommand()) return;
-	console.log(interaction);
-	switch(interaction.commandName){
+async function cc(interaction){//コマンド入力時の処理
+	if (!interaction.isChatInputCommand()) return;//念のためコマンドか確認
+	switch(interaction.commandName){//コマンド名で分岐
 		case "ping":
-			const com = require("./commands/ping.js")
-			com.execute(interaction)
+			const com = require("./commands/ping.js")//対応するモジュールを読み込み
+			com.execute(interaction)//実行
 			break;
 	}
-	interaction.messageId
 }
 module.exports = cc;//メソッドを渡すよ
