@@ -5,7 +5,6 @@ GlobalFonts.registerFromPath
 ('./Material/migmix/migmix-1m-bold.ttf', 'migm');
 
 module.exports = {
-<<<<<<< HEAD
 	data: new SlashCommandBuilder()//コマンドのデータ
 		.setName('ping')//コマンドの識別名（一意）
 		.setDescription('テスト用のコマンドだよ。'),//コマンドの説明文
@@ -20,7 +19,6 @@ module.exports = {
 
 		context.strokeRect(0, 0, canvas.width, canvas.height);
 		const avatar = await loadImage('Material/miko8.png');
-		console.info(GlobalFonts.families)
 		// Move the image downwards vertically and constrain its height to 200, so that it's square
 		context.drawImage(avatar, 450, 25, 200, 200);
 		context.beginPath();
@@ -32,7 +30,6 @@ module.exports = {
 		//context.clip();
 		context.font = '60px MigMix 1M';
 		context.fillStyle = '#ffffff';
-		console.log(context.font)
 		// Select the style that will be used to fill the text in
 		
 		// Draw a rectangle with the dimensions of the entire canvas
@@ -40,14 +37,6 @@ module.exports = {
 		// Actually fill the text with a solid color
 		context.fillText('Pong!', canvas.width / 2.5, canvas.height / 1.8);
 		const attachment = new AttachmentBuilder(await canvas.encode('png'), { name: 'profile-image.png' });
-
-	interaction.reply({ files: [attachment] });
-=======
-	data: new SlashCommandBuilder()
-		.setName('ping')
-		.setDescription('テスト用のコマンドだよ。'),
-	async execute(interaction) {
-		await interaction.reply('Pong!');
->>>>>>> parent of 849707b (おみくじbot制作開始)
+		interaction.reply({ files: [attachment] });
 	},
 };
