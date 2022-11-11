@@ -1,9 +1,13 @@
-async function cc(interaction){
+async function cc(interaction) {
 	if (!interaction.isChatInputCommand()) return;
-	console.log(interaction);
-	switch(interaction.commandName){
+	var com
+	switch (interaction.commandName) {
 		case "ping":
-			const com = require("./commands/ping.js")
+			com = require("./commands/ping.js")
+			com.execute(interaction)
+			break;
+		case "lgtm":
+			com = require("./commands/lgtm.js")
 			com.execute(interaction)
 			break;
 	}
