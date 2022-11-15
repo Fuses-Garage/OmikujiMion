@@ -18,20 +18,18 @@ module.exports = {
 
 		if (!file) return // 添付ファイルがなかったらスルー
 		if (!file.height && !file.width) return // 画像じゃなかったらスルー
-		const canvas = createCanvas(file.width, file.height);
+		const canvas = createCanvas(file.width, file.height);//画像のファイルに合わせキャンバス生成
 		const context = canvas.getContext('2d');
-		const background = await loadImage(file.url);
-		context.drawImage(background, 0, 0, canvas.width, canvas.height);
+		const background = await loadImage(file.url);//背景として読み込み
+		context.drawImage(background, 0, 0, canvas.width, canvas.height);//渡された画像を背景に
 		context.font = Math.ceil(Math.min(canvas.width * 0.8 / 4, canvas.height * 0.8)).toString() + 'px MigMix 1M';
-		context.fillStyle = '#ffffff';
-		// Select the style that will be used to fill the text in
+		context.fillStyle = '#ffffff';//色は白
 		context.textAlign = 'center'
 		context.textBaseline = 'middle'
-		// Draw a rectangle with the dimensions of the entire canvas
-
-		// Actually fill the text with a solid color
 		context.fillText('LGTM', canvas.width / 2, canvas.height / 2);
+		//縦横ともに中央揃え
 		const attachment = new AttachmentBuilder(await canvas.encode('png'), { name: 'profile-image.png' });
-		interaction.reply({ files: [attachment] });
+		//メッセージに添付できる形式に変換
+		interaction.reply({ files: [attachment] });//画像を添付し返信
 	},
 };

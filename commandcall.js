@@ -10,6 +10,10 @@ async function cc(interaction) {
 			com = require("./commands/lgtm.js")
 			com.execute(interaction)
 			break;
+		case "omikuji":
+			com = require("./commands/omikuji.js")
+			com.execute(interaction)
+			break;
 	}
 	interaction.messageId
 }
