@@ -16,7 +16,7 @@ module.exports = {
 		context.lineWidth = 10//外枠の太さ
 		context.strokeStyle = '#606060'
 		context.strokeRect(0, 0, canvas.width, canvas.height)//外枠を描画
-		const luck={1:"大凶",2:"凶",3:"末吉",4:"小吉",5:"吉",6:"中吉",7:"大吉",8:"超吉"}
+		const luck={1:"大凶",2:"凶",3:"末吉",4:"小吉",5:"吉",6:"中吉",7:"大吉",8:"極吉"}
 		const soe=Math.floor(Math.random()*8)+1
 		const lucklogo = await loadImage('Material/luck/luck'+soe+'.png');
 		context.drawImage(lucklogo, 0, 0, 700, 350);

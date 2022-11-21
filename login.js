@@ -7,9 +7,9 @@ function LoginC(client) {//ログイン処理の中身だよ
 
 		}, 5000)	//五秒以内に終わらなかったらエラー吐くよ
 		const token = process.env['BOTTOKEN']
-		console.log("Login start")
+		console.log("ログインを開始するよ。")
 		await client.login(token)//ログインするよ
-		console.log("Login Sucess");
+		console.log("ログインが完了したよ！");
 		resolve("a")//正常実行
 	})
 }

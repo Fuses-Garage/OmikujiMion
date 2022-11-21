@@ -15,7 +15,7 @@ if(token!=null){//トークンが設定されてたら
 	})()
 } 
  client.once('ready', async () => {//ログイン出来たら
-	console.log('Ready!');//コンソールにメッセージ
+	console.log('準備完了！');//コンソールにメッセージ
 	client.user.setActivity('!edumaid')//アクティビティを設定するよ
 	const dep=require("./deploy.js")
 	const gs = client.guilds.cache
