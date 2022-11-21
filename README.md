@@ -2,4 +2,4 @@
 WIP
 # クレジット
 ## かわいい巫女さんの画像:CHARAT様
-## MigMixフォント:itouhiro
+## MigMixフォント:itouhiro様
